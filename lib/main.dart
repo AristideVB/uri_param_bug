@@ -16,7 +16,8 @@ final _router = GoRouter(
         );
       },
       routes: [
-        // adb shell am start -a android.intent.action.VIEW -d "uriParamBug://com.example.uriParamBug/home?user=john&name=Doe"
+// - The intent `adb shell am start -a android.intent.action.VIEW -d "uriParamBug://example/home"` routes correctly to 'home'.
+// - The intent `adb shell am start -a android.intent.action.VIEW -d "uriParamBug://example/#/home"` fails to route to 'home'
         GoRoute(
           path: 'home',
           name: 'home',
